@@ -2,6 +2,6 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import conversations from './src/screens/conversations';
+import Router from './src/Router';
 
-AppRegistry.registerComponent('initalBuild', () => conversations);
+AppRegistry.registerComponent('initalBuild', () => Router);
