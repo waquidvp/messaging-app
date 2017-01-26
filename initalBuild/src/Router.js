@@ -6,7 +6,8 @@ import {
 
 import SignIn from './components/signIn';
 import SignUp from './components/signUp';
-import Conversations from './screens/conversations';
+import MainApp from './screens/MainApp';
+import MyAccount from './components/MyAccount'
 
 export default class Router extends Component {
   render() {
@@ -15,12 +16,12 @@ export default class Router extends Component {
         initialRoute={{name: 'SignIn', title: 'SignIn'}}
         renderScene={this.renderScene}
         configureScene={(route) => {
-          if (route.name == 'SignIn') {
+          if (route.type == 'up') {
             return Navigator.SceneConfigs.VerticalDownSwipeJump;
-          } else if (route.type =='right') {
-            return Navigator.SceneConfigs.HorizontalSwipeJump;
-          } else {
+          } else if (route.type =='down') {
             return Navigator.SceneConfigs.VerticalUpSwipeJump;
+          } else {
+            return Navigator.SceneConfigs.HorizontalSwipeJump;
           }
         }}
       />
@@ -43,9 +44,9 @@ export default class Router extends Component {
         />
       )
     }
-    if(route.name == 'Conversations') {
+    if(route.name == 'MainApp') {
       return (
-        <Conversations
+        <MainApp
           navigator = {navigator}
           {...route.passProps}
         />

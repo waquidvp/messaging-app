@@ -80,18 +80,21 @@ export default class SignUn extends Component {
   }
 
   goToSignIn = () => {
-    this.props.navigator.pop()
+    this.props.navigator.push({
+      name: 'SignIn',
+      index: 'SignIn',
+      type: 'up',
+    })
   }
 
   goToConversations = () => {
     this.props.navigator.push({
-      name: 'Conversations',
-      index: 'Conversations',
-      type: 'right',
+      name: 'MainApp',
+      index: 'MainApp',
       passProps: {
         fullName: this.state.fullName,
-        userName: this.state.userName
-      }
+        userName: this.state.userName,
+      },
     })
   }
 }

@@ -74,7 +74,8 @@ export default class SignIn extends Component {
   goToSignUp = () => {
     this.props.navigator.push({
       name: 'SignUp',
-      title: 'SignUp'
+      title: 'SignUp',
+      type: 'down',
     });
   }
 }
