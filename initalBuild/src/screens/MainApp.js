@@ -16,6 +16,8 @@ import Contacts from '../components/Contacts';
 import Chats from '../components/Chats';
 import MyAccount from '../components/MyAccount';
 
+import userdata from '../assets/userdata';
+
 export default class MainApp extends Component{
   state = {
     index: 0,
@@ -24,7 +26,6 @@ export default class MainApp extends Component{
       { key: '2', title: 'Chats' },
       { key: '3', title: 'My Account' },
     ],
-    name: 'Waquid',
   };
 
   render() {
@@ -37,7 +38,7 @@ export default class MainApp extends Component{
         <View style={styles.header}>
           <View style={styles.headerTextCont}>
             <View style={styles.headerTextContIn}>
-              <Text style={styles.headerText}>Good Morning, {this.state.name}</Text>
+              <Text style={styles.headerText}>Good Morning, {userdata.name.first}</Text>
               <Text style={styles.emoji}> <Emoji name="sunrise"/></Text>
             </View>
           </View>
